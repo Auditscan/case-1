@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Security Audit – Sweatsawdust.com</title>
+    <title>Security Audit – Sweatsawdust</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* ========== CLIENT VARIABLES – EDIT HERE ========== */
         :root {
-            --client-name: "Sweatsawdust.com";
-            --client-domain: "Sweatsawdust.com";
+            --client-name: "Sweatsawdust";
+            --client-domain: "Sweatsawdust";
             --whatsapp-number: "19082575524";
-            --risk-level: "Medium Security Risk";
-            --risk-percent: 65%;                  /* reduced from 92% */
+            --risk-level: "Elevated Risk – Blacklist Active";
+            --risk-percent: 45%;
             --blacklist-count: "8 blacklisted detected";
             --ip-address: "23.227.38.66";
             --cdn: "CloudFlare";
             --platform: "cloudflare";
-            --redirect-url: "https://Sweatsawdust.com/";
+            --redirect-url: "https://Sweatsawdust/";
         }
 
         * {
@@ -34,7 +34,7 @@
         }
 
         .urgent-banner {
-            background: #f0ad4e;  /* orange – less urgent than red */
+            background: #f0ad4e;
             color: white;
             text-align: center;
             padding: 12px;
@@ -141,7 +141,7 @@
         .meter-pointer {
             position: absolute;
             top: -12px;
-            left: var(--risk-percent, 65%);
+            left: var(--risk-percent, 45%);
             transform: translateX(-50%);
             width: 0;
             height: 0;
@@ -191,7 +191,7 @@
             margin-bottom: 20px;
         }
         .hardening-border-box {
-            border-left: 12px solid #f0ad4e;
+            border-left: 12px solid #5cb85c;
             padding-left: 20px;
         }
         .hardening-item {
@@ -276,7 +276,7 @@
 <body>
 
 <div class="urgent-banner">
-    <i class="fas fa-exclamation-triangle"></i> Security Update: Issues Remain
+    <i class="fas fa-exclamation-triangle"></i> Remaining Issue: Blacklist Active
 </div>
 
 <div class="container">
@@ -284,15 +284,15 @@
         <a href="https://wa.me/19082575524" class="back-btn" id="whatsappBackBtn">
             <i class="fas fa-arrow-left"></i>
         </a>
-        <span class="client-name">Sweatsawdust.com</span>
+        <span class="client-name">Sweatsawdust</span>
     </div>
 
     <div class="card">
         <div class="status-row">
-            <i class="fas fa-exclamation-triangle status-icon icon-yellow"></i>
+            <i class="fas fa-check-circle status-icon icon-green"></i>
             <div>
-                <h3>Site Issue</h3>
-                <p>400 Bad Request</p>
+                <h3>Site Status</h3>
+                <p>200 OK – Site Accessible</p>
             </div>
         </div>
         <div class="status-row">
@@ -305,7 +305,7 @@
         <a href="#" class="btn-yellow" id="requestReviewBtn">Request Review</a>
 
         <div class="info-box">
-            <p><strong>Redirects to:</strong> <span id="redirectUrl">https://Sweatsawdust.com/</span></p>
+            <p><strong>Redirects to:</strong> <span id="redirectUrl">https://Sweatsawdust/</span></p>
             <p><strong>IP address:</strong> <span id="ipAddress">23.227.38.66</span></p>
             <p><strong>CDN:</strong> <span id="cdnValue">CloudFlare</span></p>
             <p><strong>Powered by:</strong> <span id="platformValue">cloudflare</span></p>
@@ -317,18 +317,18 @@
             <div class="meter-fill"></div>
             <div class="meter-pointer" id="meterPointer"></div>
         </div>
-        <div class="risk-label" id="riskLabel">Medium Security Risk</div>
+        <div class="risk-label" id="riskLabel">Elevated Risk – Blacklist Active</div>
         <div class="risk-desc" id="riskDescription">
-            Our automated scan found remaining issues on your website. Malware and blacklisting have been partially reduced. Continue remediation to fully secure your site. Reach out to a <a href="#" class="specialist-link" id="specialistLink">specialist</a> for complete cleanup.
+            Malware, spam, and defacements have been fully cleaned. Security headers and firewall are active. However, the site remains blacklisted. Reach out to a <a href="#" class="specialist-link" id="specialistLink">specialist</a> to request blacklist removal.
         </div>
     </div>
 
     <div class="card">
         <h3>Website Malware & Security</h3>
         <ul class="check-list">
-            <li><i class="fas fa-exclamation-circle icon-red"></i> malware detected by scan <span class="risk-badge risk-high">(High Risk)</span></li>
-            <li><i class="fas fa-exclamation-triangle icon-yellow"></i> injected spam detected <span class="risk-badge risk-medium">(Medium Risk)</span></li>
-            <li><i class="fas fa-check-circle icon-green"></i> defacements resolved <span class="risk-badge risk-clean">(Clean)</span></li>
+            <li><i class="fas fa-check-circle icon-green"></i> malware clean <span class="risk-badge risk-clean">(Clean)</span></li>
+            <li><i class="fas fa-check-circle icon-green"></i> injected spam clean <span class="risk-badge risk-clean">(Clean)</span></li>
+            <li><i class="fas fa-check-circle icon-green"></i> defacements clean <span class="risk-badge risk-clean">(Clean)</span></li>
         </ul>
         <div style="text-align: center; margin-top: 24px;">
             <i class="fas fa-shield-alt icon-green" style="font-size: 2.2rem; margin-bottom: 8px;"></i>
@@ -340,19 +340,15 @@
     <div class="card">
         <h2 class="hardening-header">Hardening<br>Improvements</h2>
         <div class="hardening-border-box">
-            <h4>Security Headers</h4>
+            <h4>Security Headers – All Implemented</h4>
             <div class="hardening-item">
-                Missing security header for <span class="teal">ClickJacking Protection</span>.
-                Alternatively, you can use <span class="teal">Content-Security-Policy: frame-ancestors 'none'</span>.
-                <span class="affected-url">https://Sweatsawdust.com/customer_authentication/redirect?locale=en®ion_country=US</span>
+                <i class="fas fa-check-circle icon-green"></i> <span class="teal">ClickJacking Protection</span> enabled with <span class="teal">X-Frame-Options: SAMEORIGIN</span>.
             </div>
             <div class="hardening-item">
-                Missing security header to <span class="teal">prevent Content Type sniffing</span>.
-                <span class="affected-url">https://Sweatsawdust.com/customer_authentication/redirect?locale=en®ion_country=US</span>
+                <i class="fas fa-check-circle icon-green"></i> <span class="teal">Content Type sniffing</span> prevented via <span class="teal">X-Content-Type-Options: nosniff</span>.
             </div>
             <div class="hardening-item">
-                Missing <span class="teal">Strict-Transport-Security security header</span>.
-                <span class="affected-url">https://Sweatsawdust.com/customer_authentication/redirect?locale=en®ion_country=US</span>
+                <i class="fas fa-check-circle icon-green"></i> <span class="teal">Strict-Transport-Security (HSTS)</span> enabled for all subdomains.
             </div>
         </div>
     </div>
@@ -371,16 +367,16 @@
     (function() {
         // ========== CONFIG – UPDATE FOR EACH CLIENT ==========
         const config = {
-            clientName: "Sweatsawdust.com",
-            clientDomain: "Sweatsawdust.com",
+            clientName: "Sweatsawdust",
+            clientDomain: "Sweatsawdust",
             whatsappNumber: "19082575524",
-            riskLevel: "Medium Security Risk",
-            riskPercent: 65,
+            riskLevel: "Elevated Risk – Blacklist Active",
+            riskPercent: 45,
             blacklistCount: "8 blacklisted detected",
             ipAddress: "23.227.38.66",
             cdn: "CloudFlare",
             platform: "cloudflare",
-            redirectUrl: "https://Sweatsawdust.com/"
+            redirectUrl: "https://Sweatsawdust/"
         };
 
         // Apply to DOM
